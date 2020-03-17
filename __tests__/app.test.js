@@ -18,5 +18,12 @@ describe('createResponse', () => {
         expect(res.text).toEqual('ello ello ello');
       });
   });
+  it('does a GET and returns HTML with an h1 and the word red', () => {
+    return request(app)
+      .get('/red')
+      .then(res => {
+        expect(res.text).toEqual('<h1>red</h1>');
+      });
+  });
 
 });
