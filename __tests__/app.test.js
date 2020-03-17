@@ -9,5 +9,14 @@ describe('createResponse', () => {
         expect(res.text).toEqual('hi');
       });
   });
+  it('does a POST request', () => {
+    return request(app)
+      .post('/')
+      .send('ello ello ello')
+      .then(res => {
+        expect(res.status).toEqual(200);
+        expect(res.text).toEqual('ello ello ello');
+      });
+  });
 
 });
