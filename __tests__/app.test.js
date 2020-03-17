@@ -25,5 +25,19 @@ describe('createResponse', () => {
         expect(res.text).toEqual('<h1>red</h1>');
       });
   });
+  it('does a GET and returns HTML with an h1 and the word blue', () => {
+    return request(app)
+      .get('/blue')
+      .then(res => {
+        expect(res.text).toEqual('<h1>blue</h1>');
+      });
+  });
+  it('does a GET and returns HTML with an h1 and the word green', () => {
+    return request(app)
+      .get('/green')
+      .then(res => {
+        expect(res.text).toEqual('<h1>green</h1>');
+      });
+  });
 
 });
