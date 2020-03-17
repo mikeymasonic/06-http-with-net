@@ -39,5 +39,13 @@ describe('createResponse', () => {
         expect(res.text).toEqual('<h1>green</h1>');
       });
   });
+  it('404 route', () => {
+    return request(app)
+      .get('/whatever')
+      .then(res => {
+        expect(res.status).toEqual(404);
+        expect(res.text).toEqual('Not Found');
+      });
+  });
 
 });
